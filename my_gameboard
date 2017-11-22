@@ -1,0 +1,46 @@
+import pygame, sys
+
+from pygame.locals import *
+import subprocess
+
+
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+
+GRASS = 0
+STONE = 1
+
+tilemap = [
+            [GRASS, STONE, GRASS, STONE, GRASS],
+            [STONE, GRASS, STONE, GRASS, STONE],
+            [GRASS, STONE, GRASS, STONE, GRASS],
+            [STONE, GRASS, STONE, GRASS, STONE],
+            [GRASS, STONE, GRASS, STONE, GRASS]
+
+]
+
+colours = {
+            GRASS : GREEN,
+            STONE : BLUE,
+}
+
+pygame.display.set_caption('My First Game')
+#the playboard is 5 columns wide and 5 rows high
+TILESIZE = 100
+MAPWIDTH = 5
+MAPHEIGHT = 5
+
+pygame.init()
+DISPLAYSURF = pygame.display.set_mode((MAPWIDTH *TILESIZE,MAPHEIGHT*TILESIZE))
+
+while True:
+    for row in range(MAPHEIGHT):
+        for column in range(MAPWIDTH):
+            pygame.draw.rect(DISPLAYSURF, colours[tilemap[row][column]], (column*TILESIZE,row*TILESIZE,TILESIZE,TILESIZE))
+
+    pygame.display.update()
+
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
