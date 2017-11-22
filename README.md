@@ -1,2 +1,4 @@
 # game-board-in-python
 This is part of my first "IT"-project (a math game for kids) as a pedagogy student  who just started to learn about programming. I wrote this (in python) with the help of a tutorial (http://usingpython.com/pygame-tilemaps/) and adapted it to my needs.
+
+Next I am trying to find a way, how I can assign different numbers to each field which should be displayed for the player (not randomly, not chronologically - that is important for the game I planned). Later I want to be able to give rules to each field on the board. I want to find out, if it is possible to have two tile maps oberlapping (the one with the colors of the fields and another one with a specific number for each field). Would I have to use variables for the numberfields so I can put rules on them later on (meaning 25 variables as there are 25 fields)? Any hints would be welcome.
